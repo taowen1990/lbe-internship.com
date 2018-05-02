@@ -1,0 +1,38 @@
+<div class="navbar navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+      <a class="brand" href="../"></a>
+      <div class="nav-collapse collapse">
+        <ul class="nav">
+          <li id="nav_home" class="active"><a href="/">Home</a></li>
+          <li id="nav_about"><a href="/pages/about.html">About</a></li>
+          <li id="nav_apply"><a href="/pages/apply.html">Apply</a></li>
+          <li id="nav_past_projects"><a href="/pages/past_projects.html">Past Projects & Example Clients</a></li>
+          <li id="nav_donate"><a style="color:yellow;" href="/pages/donate.html">Donate</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  var links = {
+    "/pages/about.html": "nav_about",
+    "/pages/apply.html": "nav_apply",
+    "/pages/past_projects.html": "nav_past_projects",
+    "/pages/donate.html": "nav_donate",
+  }
+  for(var partial in links){
+    var selector = links[partial];
+    if(window.location.pathname == partial){
+      $('.nav #' + selector).addClass('active');
+      $('.nav #nav_home').removeClass('active');
+      break;
+    }
+  }
+</script>

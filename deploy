@@ -1,0 +1,5 @@
+#!/bin/bash
+
+rm -rf ./_site
+jekyll build
+rsync -rv --chmod=Du=rwx,Dg=rx,Do=rx,Fu=rw,Fg=r,Fo=r ./_site/* lbeinternship@grayson.dreamhost.com:/home/lbeinternship/lbe-internship.com/
